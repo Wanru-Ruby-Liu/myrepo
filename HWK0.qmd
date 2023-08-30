@@ -1,0 +1,44 @@
+---
+title: "HWK 0"
+format: html
+---
+
+Wanru Liu
+
+8/30/2023
+
+## Function Solution
+
+The roots of quadratic equations $f(x)=ax^2+bx+c=0$ for $a=1, b=-1, c=-2$ are solved below:
+
+```{r}
+#| echo: false
+quad<-function(a,b,c){
+    if(a==0&&b==0&&c==0){
+      roots<-NA
+      }
+  else if(a==0&&b==0){roots<-NULL} 
+  else if(a==0){roots<--c/b}
+  else {discrim<-b^2-4*a*c 
+  if(discrim>=0){roots<-(-b+c(1,-1)*sqrt(discrim))/(2*a)}
+  else {roots<-NULL}}
+  
+  return(roots)
+}
+
+quad(a=1,b=3,c=2)
+```
+
+## Graph of the Function
+
+The graph of the function $f(x)=ax^2+bx+c=0$ for $a=1, b=-1, c=-2$ is shown below to verify the roots that have been solved in the previous section:
+
+```{r}
+#| echo: false
+a <- 1
+b <- 3
+c <- 2
+x <- seq(-5, 5, length = 300)
+plot(x, a*x^2 + b*x + c, type = "l")
+abline(h = 0, lty = 2)
+```
